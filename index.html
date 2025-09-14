@@ -43,6 +43,13 @@
         ></ul>
         <ul id="resultado" class="result-list" aria-live="polite"></ul>
 
+        <div class="file-upload-container">
+          <input type="file" id="fileInput" accept=".txt, .csv, .xlsx, .xls" />
+          <button class="button-add" onclick="cargarAmigosDesdeArchivo()">
+            Cargar archivo
+          </button>
+        </div>
+
         <div class="button-container">
           <button
             class="button-draw"
@@ -56,6 +63,13 @@
             Sortear amigo
           </button>
           <button
+            class="button-download"
+            onclick="descargarSorteo()"
+            aria-label="Descargar sorteo"
+          >
+            Descargar sorteo
+          </button>
+          <button
             class="button-add"
             onclick="limpiarLista()"
             aria-label="Limpiar lista"
@@ -66,6 +80,7 @@
       </section>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="app.js" defer></script>
   </body>
 </html>
